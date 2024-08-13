@@ -1,9 +1,9 @@
 import js from '@eslint/js';
-import globals from 'globals';
+import react from '@vitejs/plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import react from '@vitejs/plugin-react';
 
 export default tseslint.config({
 	extends: [js.configs.recommended, ...tseslint.configs.recommended],
@@ -30,6 +30,5 @@ export default tseslint.config({
 		],
 		...react.configs.recommended.rules,
 		...react.configs['jsx-runtime'].rules,
-		'unused-imports/no-unused-imports-ts': 'warn',
 	},
 });
